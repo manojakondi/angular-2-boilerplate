@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {TestComponent} from './test.component';
 
 @Component({
     selector: 'my-component',
@@ -9,8 +10,11 @@ import {Component} from 'angular2/core';
         <input type="text" required #inputElement (keyup)="0">
         <br><br>
         <button [disabled]="inputElement.value !== 'yes'">Only enabled if 'yes' was entered</button>
+        <br><br>
+        <test></test>
     `,
-    styleUrls: ['src/css/mycomponent.css']
+    styleUrls: ['src/css/mycomponent.css'],
+    directives: [TestComponent]
 })
 
 export class MyComponentComponent {
